@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://maven.eveoh.nl/content/repositories/releases"
+        }
+    }
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+        classpath 'hugo.boss:hugo-plugin:1.0'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'idea'
+    id 'net.ltgt.apt' version '0.9'
+    id 'org.inferred.processors' version '1.2.8'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url 'https://jitpack.io'
+    }
+}
+
+project.ext {
+    aspectjVersion = '1.8.6'
+}
+
+apply plugin: 'javafx-gradle-plugin'
+apply plugin: 'hugo'
+
+group 'com.bitgrind.android.devtools'
+version '1.0-SNAPSHOT'
+
+//sourceCompatibility = 1.8
+
+dependencies {
+    compile 'com.google.dagger:dagger:2.8'
+    processor 'com.google.dagger:dagger-compiler:2.8'
+    compile 'com.github.vidstige:jadb:23d185b'
+    testCompile 'junit:junit:4.11'
+    compile 'com.google.guava:guava:21.0'
+}
+
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = 'com.bitgrind.android.devtools.DevToolsApp'
+
+    // minimal requirement for jfxNative-task
+    vendor = 'DevTools'
+}

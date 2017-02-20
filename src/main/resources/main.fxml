@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<BorderPane minHeight="100.0" minWidth="100.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" minHeight="100.0" minWidth="100.0" BorderPane.alignment="CENTER">
+            <content>
+                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" fillWidth="true">
+                    <Label nodeOrientation="LEFT_TO_RIGHT" prefHeight="24.0" prefWidth="600.0" text="Label" BorderPane.alignment="CENTER" />
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <Label fx:id="status" nodeOrientation="LEFT_TO_RIGHT" prefHeight="24.0" prefWidth="600.0" text="Label" BorderPane.alignment="CENTER" />
+    </bottom>
+   <right>
+   </right>
+</BorderPane>
